@@ -1,6 +1,50 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
+<script type="text/javascript">
+    $.ajax({
+        url: '@Url.Action("TopList", "ListCircle", new { city = "Санкт-Петербург" })',
+        success: function (data) {
+            $('#catalog_top').html(data);
+        }
+    });
+    $.ajax({
+        url: '@Url.Action("CategoryList", "ListCircle")',
+        success: function (data) {
+            $('#categorys').html(data);
+        }
+    });
+</script>
+<div id="top_menu">
+    <a href="#top" class="top_logo"></a>
+    <ul>
+        <li><a href="#modal_city" data-modal="modal" class="top_city"><span>Выбрать город</span></a></li>
+        <li><a href="#main_block_1">О нас</a></li>
+        <li><a href="#main_block_2">Топ</a></li>
+        <li><a href="#main_block_3">Категории</a></li>
+        <li><a href="#main_block_4">About</a></li>
+        <li><a href="#main_block_5">About</a></li>
+        <li><a href="#main_block_6">Контакты</a></li>
+        <li><a href="#modal_write_us" data-modal="modal" class="sign_in"><span>Написать нам</span></a></li>
+        <li><a href="#modal_sign_in" data-modal="modal" class="sign_in"><span>Войти</span></a></li>
+    </ul>
+</div>
+<div id="main_block_1" class="main_block">
+    <div class="content">
+        <h1 class="cl_white">Хендмейдеры тут!</h1>
+        <h2>handmade.ru</h2>
+        <p class="descr_about">Предлагаем вам каталог хендмейдеров России.<br />У нас вы сможете найти лучших мастеров в вашем городе,<br />а так же лучших из лучших во всех уголках страны.</p>
+        <p class="descr_about_small">Если вы являетесь создателем уникальных вещей, предлагаем вам разместить свои работы на нашем сайте, чтобы их смогли увидеть не только люди вашего города, но и всей страны.</p>
+        <a href="#modal_sign_in" data-modal="modal" class="btn btn_green indent_top">Разместить мои работы</a>
+    </div>
+</div>
+<div id="main_block_2" class="main_block">
+    <h2 class="text_center cl_black">Хендмедеры Топ <span class="in_city">в городе Санкт-Петербург</span></h2>
+    <ul id="catalog_top" class="circles flipper_block"></ul>
+</div>
+<div id="main_block_3" class="main_block">
+    <h2 class="text_center cl_black">Категории</h2>
+    <ul id="category" class="circles flipper_block"></ul>
+</div>

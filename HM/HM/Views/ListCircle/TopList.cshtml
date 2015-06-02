@@ -1,0 +1,16 @@
+﻿@model IEnumerable<HM.Models.Artisan>
+
+@foreach (var item in Model)
+{
+    <li>
+        <div class="flipper">
+            <div class="front" style="background: url(img/@item.Photo) no-repeat;"></div>
+            <div class="back">
+                <div class="middle">
+                    <h3>@item.Name</h3>
+                    <a href="@item.ID.ToString()">Посмотреть...</a>
+                </div>
+            </div>
+        </div>
+    </li>
+}

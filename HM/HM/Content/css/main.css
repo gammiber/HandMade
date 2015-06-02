@@ -117,7 +117,7 @@ textarea{
 	background-size: cover;
 }
 #main_block_1 h1{
-	margin-top: 15%;
+	margin-top: 10%;
 }
 #main_block_2{
 	background-image: url(../img/binding_light.png);
@@ -249,21 +249,21 @@ textarea{
 .checked_user.active{
 	background: #ff8400;
 }
-/*catalog top*/
-.catalog_top  {
+/*circles*/
+.circles  {
 	width: 960px;
 	margin: 40px auto;	
 }
-.catalog_top li{	
+.circles li{	
 	width: 200px;
 	height: 200px;
 	margin: 20px;	
 }
-.catalog_top .middle, .catalog_top .front, .catalog_top .back{
+.circles .middle, .circles .front, .circles .back{
 	width: 200px;
 	height: 200px;
 }
-.catalog_top .back {	
+.circles .back {	
 	background: #ffffff;	
 }
 /*cabinet*/
@@ -324,7 +324,7 @@ textarea{
 }
 .modal{
 	position: fixed;
-	top: 30%;
+	top: 20%;
 	left: 50%;
 	width: 500px;
 	margin-left: -250px;

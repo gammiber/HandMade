@@ -38,7 +38,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -82,27 +89,84 @@
   <ItemGroup>
     <Content Include="Content\css\base.css" />
     <Content Include="Content\css\main.css" />
+    <Content Include="Content\img\1px.png" />
+    <Content Include="Content\img\binding_light.png" />
+    <Content Include="Content\img\fade.png" />
+    <Content Include="Content\img\fade_light.png" />
+    <Content Include="Content\img\hm.png" />
+    <Content Include="Content\img\white_2.png" />
     <Content Include="Content\js\jquery-1.11.3.min.js" />
     <Content Include="Content\js\main.js" />
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\ArtisanList\ArtisanListAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListCircleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Artisan.cs">
+      <DependentUpon>HandMadeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Avatar.cs">
+      <DependentUpon>HandMadeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>HandMadeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gallery.cs">
+      <DependentUpon>HandMadeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HandMadeModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HandMadeModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HandMadeModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HandMadeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HandMadeModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HandMadeModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Review.cs">
+      <DependentUpon>HandMadeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>HandMadeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Areas\ArtisanList\Views\web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\ListCircle\TopList.cshtml" />
+    <EntityDeploy Include="Models\HandMadeModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HandMadeModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\HandMadeModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HandMadeModel.edmx</DependentUpon>
+      <LastGenOutput>HandMadeModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\HandMadeModel.edmx.diagram">
+      <DependentUpon>HandMadeModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\HandMadeModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HandMadeModel.edmx</DependentUpon>
+      <LastGenOutput>HandMadeModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\ListCircle\CategoryList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -112,11 +176,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\ArtisanList\Controllers\" />
-    <Folder Include="Areas\ArtisanList\Models\" />
-    <Folder Include="Areas\ArtisanList\Views\Shared\" />
-    <Folder Include="Content\img\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,16 @@
+﻿@model IEnumerable<HM.Models.Category>
+
+@foreach (var item in Model)
+{
+    <li>
+        <div class="flipper">
+            <div class="front" style="background: url() no-repeat;"></div>
+            <div class="back">
+                <div class="middle">
+                    <h3>@item.Name</h3>
+                    <a href="@item.ID.ToString()">Посмотреть...</a>
+                </div>
+            </div>
+        </div>
+    </li>
+}
