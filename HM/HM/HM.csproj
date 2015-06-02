@@ -80,12 +80,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\base.css" />
+    <Content Include="Content\css\main.css" />
+    <Content Include="Content\js\jquery-1.11.3.min.js" />
+    <Content Include="Content\js\main.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\ArtisanList\ArtisanListAreaRegistration.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -95,6 +100,9 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Areas\ArtisanList\Views\web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -107,7 +115,7 @@
     <Folder Include="Areas\ArtisanList\Controllers\" />
     <Folder Include="Areas\ArtisanList\Models\" />
     <Folder Include="Areas\ArtisanList\Views\Shared\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Content\img\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/main.css" rel="stylesheet" type="text/css" />
+    <script src="~/Content/js/jquery-1.11.3.min.js"></script>
+    <script src="~/Content/js/main.js"></script>
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: { families: ['Didact+Gothic::latin,cyrillic'] }
+        };
+        (function () {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+              '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+</head>
+<body>
+    @RenderBody() 
+    <div class="fade_bckgr hidden"></div>
+    <div id="modal_city" class="modal hidden">
+        <div class="modal_body">
+            <a href="" class="close">&times;</a>
+            <h3>Выбор города</h3>
+            <form>
+                <div class="field clearfix">
+                    <label>Текущий город: Санкт-Петербург</label>
+                </div>
+                <div class="field clearfix">
+                    <label>Изменить город:</label>
+                    <select class="indent_left_10">
+                        <option>Москва</option>
+                        <option>Казань</option>
+                        <option>Самара</option>
+                    </select>
+                </div>
+                <input class="btn btn_green" type="submit" value="Сменить город" />
+            </form>
+        </div>
+    </div>
+    <div id="modal_sign_in" class="modal hidden">
+        <div class="modal_body">
+            <a href="" class="close">&times;</a>
+            <h3>Войти или <a href="#modal_register" data-modal="modal">Зарегистрироваться</a></h3>
+            <form class="indent_top">
+                <div class="field clearfix">
+                    <label for="sign_in_login">Логин:</label>
+                    <input type="text" id="sign_in_login">
+                </div>
+                <div class="field clearfix">
+                    <label for="sign_in_pass">Пароль:</label>
+                    <input type="password" id="sign_in_pass">
+                    <div class="clear"></div>
+                    <a href="" class="forgotten">Забыли пароль?</a>
+                </div>
+                <input class="btn btn_green" type="submit" value="Войти" />
+            </form>
+        </div>
+    </div>
+    <div id="modal_write_us" class="modal hidden">
+        <div class="modal_body">
+            <a href="" class="close">&times;</a>
+            <h3>Написать нам</h3>
+            <form class="">
+                <div class="field clearfix">
+                    <label for="modal_write_us_name">Имя:</label>
+                    <input type="text" id="modal_write_us_name">
+                </div>
+                <div class="field clearfix">
+                    <label for="modal_write_us_mail">Email:</label>
+                    <input type="text" id="modal_write_us_mail">
+                </div>
+                <div class="field clearfix">
+                    <label for="modal_write_us_text">Ваш текст:</label>
+                    <textarea id="modal_write_us_text" style="width: 326px; height: 60px;"></textarea>
+                </div>
+                <input class="btn btn_green" type="submit" value="Отпарвить" />
+            </form>
+        </div>
+    </div>
+    <div id="modal_register" class="modal hidden">
+        <div class="modal_body">
+            <a href="" class="close">&times;</a>
+            <h3>Зарегистрироваться или <a href="#modal_sign_in" data-modal="modal">Войти</a></h3>
+            <form class="indent_top_20">
+                <div class="field clearfix">
+                    <label for="modal_register_name">Имя:</label>
+                    <input type="text" id="modal_write_us_name">
+                </div>
+                <div class="field clearfix">
+                    <label for="modal_register_name">Ваш город:</label>
+                    <input type="text" />
+                </div>
+                <div class="field clearfix">
+                    <label for="modal_register_email">Email:</label>
+                    <input type="text" id="modal_register_email">
+                </div>
+                <div class="field clearfix">
+                    <label for="modal_register_pass">Пароль:</label>
+                    <input type="password" id="modal_register_pass">
+                </div>
+                <label class="checked_user first_child" for="checked_user_hm">
+                    Я хендмейдер
+                    <input type="radio" name="checked_user" id="checked_user_hm">
+                </label>
+                <label class="checked_user indent_left_10" for="checked_user_not_hm">
+                    Я не хендмейдер
+                    <input type="radio" name="checked_user" id="checked_user_not_hm">
+                </label>
+                <input class="btn btn_green" type="submit" value="Зарегистрироваться" />
+            </form>
+        </div>
+    </div>     
+</body>
+</html>
